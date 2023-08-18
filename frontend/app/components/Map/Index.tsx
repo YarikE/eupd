@@ -8,6 +8,7 @@ import {setMapOptions, setUserAddress} from "@/redux/Features/user/userSlice";
 import {usePathname} from "next/navigation";
 import GetComponentByPath from "@/app/components/Map/GetComponentByPath";
 import Navigation from "@/app/components/Navigation";
+import Menu from "@/app/components/Map/Menu/Menu";
 
 const MapComponent = () => {
 
@@ -86,10 +87,11 @@ const MapComponent = () => {
 
     return (
         <div>
+            <Menu/>
             <div id='container' className='map-container' ref={mapContainer}></div>
             <GetComponentByPath path={path} props={{mapMove, userAddress, cordsCenter}}/>
             {
-                !path.includes("/auth") ? <Navigation/> : null
+                !path.includes("/auth") && !path.includes("/reviews-qr") ? <Navigation/> : null
             }
         </div>
     );

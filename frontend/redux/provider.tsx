@@ -6,7 +6,7 @@ import MapComponent from "@/app/components/Map/Index";
 import styled from "styled-components";
 
 const PageContent = styled.main`
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   width: 100%;
   top: 0;

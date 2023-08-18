@@ -3,11 +3,11 @@ import {NavigatonModule} from "@/app/components/Navigation/navigaton.module";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import {useSelector} from "react-redux";
+import {RootState} from "@/redux/store";
 
 const Index = () => {
     const pathname = usePathname()
-    // @ts-ignore
-    const user = useSelector(state => state.user.user)
+    const user = useSelector((state: RootState) => state.user.user)
 
     return (
         <NavigatonModule>
@@ -29,7 +29,7 @@ const Index = () => {
                     <p>Карта</p>
                 </Link>
                 {
-                    user ? (
+                    user.hasOwnProperty('username') ? (
                         <>
                             <Link href={'/profile'} shallow className={pathname.includes("/profile") ? "active" : ""}>
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"

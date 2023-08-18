@@ -36,7 +36,7 @@ const FormTemplate = ({question, setCurrentQuestion}:
 
         if (timer === 0) {
             clearInterval(timerId);
-            router.push('/home/map')
+            router.push('/')
         }
 
         return () => {
@@ -44,7 +44,7 @@ const FormTemplate = ({question, setCurrentQuestion}:
         };
     }, [question, timer]);
     function rateSystem() {
-        if (question.rateSystem === 'stars') {
+        if (question?.rateSystem === 'stars') {
             return (
                 <div className='rate-system stars'>
                     {
@@ -65,7 +65,7 @@ const FormTemplate = ({question, setCurrentQuestion}:
                 </div>
             )
         }
-        else if (!question.rateSystem && question.answers) {
+        else if (!question?.rateSystem && question?.answers) {
             return (
                 <div className='rate-system answers'>
                     {

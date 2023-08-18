@@ -4,7 +4,7 @@ import {IUserDetails} from "@/redux/Features/user/user";
 
 export const createUserApi = async ({username, password}: IUserDetails) => {
     const data = {username, password};
-    const result: object | any = await axios.post(`http://192.168.88.102:8000/api/registration/`, {
+    const result: object | any = await axios.post(`http://127.0.0.1:8000/api/registration/`, {
         ...data
     }, {
         headers: {
@@ -16,7 +16,7 @@ export const createUserApi = async ({username, password}: IUserDetails) => {
 
 export const loginUserApi = async ({username, password}: IUserDetails) => {
     const data = {username, password};
-    const result: object | any = await axios.post('http://192.168.88.102:8000/api/v1/token/', {
+    const result: object | any = await axios.post('http://127.0.0.1:8000/api/v1/token/', {
         ...data
     }, {
         headers: {
@@ -29,6 +29,6 @@ export const loginUserApi = async ({username, password}: IUserDetails) => {
 export const loginUserByIdApi = async ({token}: IUserDetails) => {
     const data = { token }
     console.log('ss', data)
-    const result: object | any = await axios.get('http://192.168.88.102:8000/api/get-user-info/', {headers: {'Authorization': `Bearer ${token}`}});
+    const result: object | any = await axios.get('http://127.0.0.1:8000/api/get-user-info/', {headers: {'Authorization': `Bearer ${token}`}});
     return result.data;
 };

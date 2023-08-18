@@ -21,7 +21,7 @@ export const createUser = createAsyncThunk(
     "user/createUser",
     async ({username, password}: IUserDetails) => {
         const data = { username, password }
-        const result: object | any = await axios.post(`http://192.168.88.102:8000/api/registration/`, data )
+        const result: object | any = await axios.post(`http://127.0.0.1:8000/api/registration/`, data )
         console.log('result: ', result)
         console.log('username: ', username, 'password: ', password)
         return result.data
@@ -30,7 +30,7 @@ export const createUser = createAsyncThunk(
 export const loginUser = createAsyncThunk(
     "user/loginUser",
     async ({username, password}: IUserDetails) => {
-        const result: object | any = await axios.post('http://192.168.88.102:8000/api/login_user/', {username, password});
+        const result: object | any = await axios.post('http://127.0.0.1:8000/api/login_user/', {username, password});
         return result.data
     }
 )
@@ -38,7 +38,7 @@ export const loginUser = createAsyncThunk(
 export const loginUserById = createAsyncThunk(
     "user/loginUserById",
     async ({token}: IUserDetails) => {
-        const result: object | any = await axios.post('http://192.168.88.102:8000/api/auth_user/', {token});
+        const result: object | any = await axios.post('http://127.0.0.1:8000/api/auth_user/', {token});
         return result.data
     }
 )

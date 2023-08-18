@@ -1,11 +1,13 @@
 "use client"
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Slides from "@/app/components/Home/Slides";
 import './page.scss'
+import axios from "axios";
 const Page = () => {
 
     const [selectedFilter, setFilter] = useState('')
+    const [news, setNews] = useState([])
     const Questions = [
         {
             question: "Какой мусор мы принимаем",
@@ -36,7 +38,17 @@ const Page = () => {
         }
     ]
 
+    useEffect(()=> {
+        const token = localStorage.getItem('token')
 
+        axios.get('http://127.0.0.1:8000/api/news-list/', {headers: {'Authorization': `Bearer ${token}`}}).then((response) => {
+            setNews(response.data)
+            console.log(response)
+        })
+            .catch(() => {
+                console.log('СВОРАЧИВАЙ ШАРМАНКУ, ЭТО ПРОД ОШИБКА')
+            })
+    },[])
 
     return (
             <div className="panel">

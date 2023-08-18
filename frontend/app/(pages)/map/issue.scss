@@ -22,31 +22,30 @@
   position: absolute;
   pointer-events: none;
   z-index: 1;
-
-  &:after {
-    position: absolute;
-    content: "";
-    pointer-events: none;
-    user-select: none;
-    top: 0;
-    left: 0;
-    width: 428px;
-    height: 271px;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.00) 26.04%, #FFF 100%);
-  }
-
-  &::before {
-    z-index: -1;
-    position: absolute;
-    content: "";
-    pointer-events: none;
-    user-select: none;
-    bottom: 0;
-    left: 0;
-    width: 428px;
-    height: 271px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 26.04%, #FFF 100%);
-  }
+  //
+  //&:after {
+  //  position: absolute;
+  //  content: "";
+  //  pointer-events: none;
+  //  user-select: none;
+  //  top: 0;
+  //  left: 0;
+  //  width: 428px;
+  //  height: 271px;
+  //  background: linear-gradient(0deg, rgba(255, 255, 255, 0.00) 26.04%, #FFF 100%);
+  //}
+  //&::before {
+  //  z-index: -1;
+  //  position: absolute;
+  //  content: "";
+  //  pointer-events: none;
+  //  user-select: none;
+  //  bottom: 0;
+  //  left: 0;
+  //  width: 428px;
+  //  height: 271px;
+  //  background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 26.04%, #FFF 100%);
+  //}
 
   .review-wrapper {
     .description {
