@@ -24,7 +24,13 @@ EXPOSE 3000
 RUN rm -fr ./.next
 
 # Запуск проекта
-CMD ["npm", "run", "dev"]
+# CMD ["npm", "run", "dev"]
+
+
+CMD ["npm", "run", "build"]
+CMD ["npm", "run", "start"]
+
+
 
 # CMD while true; do sleep 1000; done
 
