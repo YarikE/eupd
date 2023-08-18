@@ -5,6 +5,13 @@ import Slides from "@/app/components/Home/Slides";
 import './page.scss'
 import axios from "axios";
 const Page = () => {
+gi
+
+    useEffect(() => {
+        // axios.post(env.process.BASE_URL)
+        console.log('BASE AURL')
+        console.log(process.env)
+    }, []);
 
     const [selectedFilter, setFilter] = useState('')
     const [news, setNews] = useState([])

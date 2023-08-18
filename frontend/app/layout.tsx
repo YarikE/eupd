@@ -25,6 +25,7 @@ export default function RootLayout({
     children: React.ReactNode,
     pageProps: any
 }) {
+
     return (
         <html lang="ru">
         <body>
